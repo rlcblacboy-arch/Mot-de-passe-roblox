@@ -7,10 +7,9 @@ CORS(app)
 
 MOTS_INTERDITS = ["insulte1", "insulte2", "motinterdit"]
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def accueil():
     return "Serveur actif"
-
 @app.route("/Mot de passe", methods=["POST"])
 def chat():
     data = request.get_json() or {}
